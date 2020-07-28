@@ -28,8 +28,10 @@ def run(argv):
         f.write('''\
 #!/bin/bash
 #SBATCH --cpus-per-task=4
-#SBATCH --mem=1G
-#SBATCH --time=5-0:0
+#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user=sguo2@its.jnj.com
+#SBATCH --mem=10G
+#SBATCH --time=03:00:00
 #SBATCH --array=0-{n_jobs}
 #SBATCH --output={tmp_path}/slurm-%j.out
 #SBATCH --error={tmp_path}/slurm-%j.out
